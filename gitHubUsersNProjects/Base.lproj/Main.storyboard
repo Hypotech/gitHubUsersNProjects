@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="144" width="414" height="718"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userDetailsCellID" rowHeight="70" id="cCr-Hz-Pzt" customClass="UserListTableViewCell" customModule="gitHubUsersNProjects" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userListCellID" rowHeight="70" id="cCr-Hz-Pzt" customClass="UserListTableViewCell" customModule="gitHubUsersNProjects" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cCr-Hz-Pzt" id="YTy-qO-s2e">
@@ -171,6 +171,55 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="19M-hK-ZnE">
                                 <rect key="frame" x="0.0" y="394" width="414" height="468"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="userDetailsCellID" rowHeight="62" id="Lm9-v8-DmT" customClass="RepoTableViewCell" customModule="gitHubUsersNProjects" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="62"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lm9-v8-DmT" id="jWC-1l-1dt">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="62"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bts-cj-rPg">
+                                                    <rect key="frame" x="20" y="21" width="42" height="20.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b6g-4B-zA7">
+                                                    <rect key="frame" x="362" y="10" width="42" height="42"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xth-xc-YL3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="42" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fa9-iz-Zui">
+                                                            <rect key="frame" x="0.0" y="28.5" width="42" height="13.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="b6g-4B-zA7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bts-cj-rPg" secondAttribute="trailing" constant="10" id="2Wl-ZI-5Ce"/>
+                                                <constraint firstAttribute="trailing" secondItem="b6g-4B-zA7" secondAttribute="trailing" constant="10" id="899-YK-zi1"/>
+                                                <constraint firstAttribute="bottom" secondItem="b6g-4B-zA7" secondAttribute="bottom" constant="10" id="BPd-KO-qPc"/>
+                                                <constraint firstItem="b6g-4B-zA7" firstAttribute="centerY" secondItem="jWC-1l-1dt" secondAttribute="centerY" id="Vrq-Fb-pSH"/>
+                                                <constraint firstItem="b6g-4B-zA7" firstAttribute="top" secondItem="jWC-1l-1dt" secondAttribute="top" constant="10" id="dog-jM-9A4"/>
+                                                <constraint firstItem="bts-cj-rPg" firstAttribute="leading" secondItem="jWC-1l-1dt" secondAttribute="leadingMargin" id="oYf-AV-Hw5"/>
+                                                <constraint firstItem="bts-cj-rPg" firstAttribute="centerY" secondItem="jWC-1l-1dt" secondAttribute="centerY" id="xaW-98-bLK"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="forks" destination="Xth-xc-YL3" id="QRU-DU-yuF"/>
+                                            <outlet property="repoName" destination="bts-cj-rPg" id="eeL-hM-mLf"/>
+                                            <outlet property="starsLabel" destination="Fa9-iz-Zui" id="hRP-ol-nUf"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <searchBar contentMode="redraw" id="d0s-pX-Pqm">
                                 <rect key="frame" x="0.0" y="350" width="414" height="44"/>
@@ -181,10 +230,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="19M-hK-ZnE" firstAttribute="top" secondItem="d0s-pX-Pqm" secondAttribute="bottom" id="2Mv-sk-pEa"/>
-                            <constraint firstItem="19M-hK-ZnE" firstAttribute="leading" secondItem="atc-xZ-dCA" secondAttribute="leading" id="2iG-DW-Ezw"/>
-                            <constraint firstItem="atc-xZ-dCA" firstAttribute="trailing" secondItem="19M-hK-ZnE" secondAttribute="trailing" id="6Vj-2h-3pg"/>
+                            <constraint firstItem="atc-xZ-dCA" firstAttribute="trailing" secondItem="19M-hK-ZnE" secondAttribute="trailing" id="6L5-wv-7GH"/>
                             <constraint firstItem="Ub8-Q9-tqI" firstAttribute="top" secondItem="atc-xZ-dCA" secondAttribute="top" id="8L6-oO-Ypg"/>
                             <constraint firstItem="d0s-pX-Pqm" firstAttribute="top" secondItem="Ub8-Q9-tqI" secondAttribute="bottom" id="8qv-6i-GyC"/>
+                            <constraint firstItem="19M-hK-ZnE" firstAttribute="leading" secondItem="atc-xZ-dCA" secondAttribute="leading" id="Hw0-Og-E6j"/>
                             <constraint firstItem="atc-xZ-dCA" firstAttribute="bottom" secondItem="19M-hK-ZnE" secondAttribute="bottom" id="PQm-aR-P4S"/>
                             <constraint firstAttribute="trailing" secondItem="Ub8-Q9-tqI" secondAttribute="trailing" id="T4G-rg-za1"/>
                             <constraint firstItem="Ub8-Q9-tqI" firstAttribute="leading" secondItem="atc-xZ-dCA" secondAttribute="leading" id="WWl-3R-Zt4"/>

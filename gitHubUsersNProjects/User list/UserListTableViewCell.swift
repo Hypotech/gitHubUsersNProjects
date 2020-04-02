@@ -14,8 +14,8 @@ import RxCocoa
 
 final class UserListTableViewCellViewModel {
     var image = BehaviorRelay<UIImage>(value:  #imageLiteral(resourceName: "gitHubUser.png"))
-    var userName = BehaviorRelay<String>(value: "––––––")
-    var repoCount = BehaviorRelay<String>(value: "––––––")
+    var userName = BehaviorRelay<String>(value: "--")
+    var repoCount = BehaviorRelay<String>(value: "--")
             
     func configureWith(user: GitHubUser) {
         if let userName = user.name {

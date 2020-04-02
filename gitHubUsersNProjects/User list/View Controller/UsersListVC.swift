@@ -13,7 +13,14 @@ import RxCocoa
 final class UsersListVC: UIViewController {
     @IBOutlet private var searchBar: UISearchBar!
     @IBOutlet private var tableView: UITableView!
-    private let loadingIndicator = UIActivityIndicatorView(style: .medium)
+    private let loadingIndicator: UIActivityIndicatorView = {
+       let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.color = .white
+        activityIndicator.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        
+        return activityIndicator
+    }()
 
     private let disposeBag = DisposeBag()
     private var viewModel = UsersListViewModel()
@@ -26,6 +33,7 @@ final class UsersListVC: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        searchBar.searchTextField.delegate = self
         searchBar.rx.text.orEmpty
             .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
             .distinctUntilChanged().filter { !$0.isEmpty }
@@ -41,10 +49,10 @@ final class UsersListVC: UIViewController {
         self.view.addSubview(loadingIndicator)
         
         NSLayoutConstraint.activate([
-            loadingIndicator.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
-            loadingIndicator.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor),
-            loadingIndicator.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor),
-            loadingIndicator.rightAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.rightAnchor)
+            loadingIndicator.topAnchor.constraint(equalTo: self.view.topAnchor),
+            loadingIndicator.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+            loadingIndicator.leftAnchor.constraint(equalTo: self.view.leftAnchor),
+            loadingIndicator.rightAnchor.constraint(equalTo: self.view.rightAnchor)
         ])
     }
 }
@@ -54,7 +62,7 @@ extension UsersListVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellViewModel = viewModel.cellViewModel(at: indexPath.row)
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "userDetailsCellID",
+        let cell = tableView.dequeueReusableCell(withIdentifier: "userListCellID",
                                                  for: indexPath) as! UserListTableViewCell
         cell.configure(with: cellViewModel)
         
@@ -65,9 +73,8 @@ extension UsersListVC: UITableViewDelegate {
         let userDetailsViewModel = viewModel.userDetailsViewModel(at: indexPath.row)
 
         let userDetailsVC = storyboard?.instantiateViewController(identifier: "UserDetailsVCID") as! UserDetailsVC
+        userDetailsVC.viewModel = userDetailsViewModel
         
-        userDetailsVC.configureWith(viewModel: userDetailsViewModel)
-
         self.navigationController?.pushViewController(userDetailsVC, animated: true)
     }
 }
@@ -78,4 +85,13 @@ extension UsersListVC: UITableViewDataSource {
         return viewModel.numberOfRows
     }
     
+}
+
+//MARK: - UITextFieldDelegate
+extension UsersListVC: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }

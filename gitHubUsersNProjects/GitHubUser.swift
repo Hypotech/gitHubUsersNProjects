@@ -16,7 +16,7 @@ struct GitHubUser {
     var location: String?
     var email: String?
     var created_at: String?
-    var followers: Int? = 0
+    var followers: Int?
     var following: Int?
     
     init(dictionary: [String: Any]) {

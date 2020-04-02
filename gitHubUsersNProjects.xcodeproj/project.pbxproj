@@ -17,6 +17,8 @@
 		BC4B09D12434C7A00086C30D /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4B09D02434C7A00086C30D /* UserListTableViewCell.swift */; };
 		BCB3013C24354D88009E8163 /* UserDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB3013B24354D88009E8163 /* UserDetailsVC.swift */; };
 		BCB3013F24356C5A009E8163 /* GitHubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB3013E24356C5A009E8163 /* GitHubUser.swift */; };
+		BCB3014224358525009E8163 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB3014124358525009E8163 /* RepoTableViewCell.swift */; };
+		BCB301452435A43D009E8163 /* UserDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB301442435A43D009E8163 /* UserDetailsViewModel.swift */; };
 		BCF0EA362435024900188227 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCF0EA352435024900188227 /* UsersListViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		BC4B09D02434C7A00086C30D /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
 		BCB3013B24354D88009E8163 /* UserDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsVC.swift; sourceTree = "<group>"; };
 		BCB3013E24356C5A009E8163 /* GitHubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubUser.swift; sourceTree = "<group>"; };
+		BCB3014124358525009E8163 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
+		BCB301442435A43D009E8163 /* UserDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewModel.swift; sourceTree = "<group>"; };
 		BCF0EA352435024900188227 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
 		E2DCAE0227E2121FD88A81EF /* Pods_gitHubUsersNProjects.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gitHubUsersNProjects.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -111,6 +115,22 @@
 			path = "User list";
 			sourceTree = "<group>";
 		};
+		BCB301402435850B009E8163 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BCB3013B24354D88009E8163 /* UserDetailsVC.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		BCB301432435A424009E8163 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				BCB301442435A43D009E8163 /* UserDetailsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		BCF0EA342435023100188227 /* VIewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,7 +150,9 @@
 		BCF0EA3824354CA000188227 /* User details */ = {
 			isa = PBXGroup;
 			children = (
-				BCB3013B24354D88009E8163 /* UserDetailsVC.swift */,
+				BCB301432435A424009E8163 /* View Model */,
+				BCB301402435850B009E8163 /* View Controller */,
+				BCB3014124358525009E8163 /* RepoTableViewCell.swift */,
 			);
 			path = "User details";
 			sourceTree = "<group>";
@@ -251,6 +273,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BCB3013F24356C5A009E8163 /* GitHubUser.swift in Sources */,
+				BCB3014224358525009E8163 /* RepoTableViewCell.swift in Sources */,
+				BCB301452435A43D009E8163 /* UserDetailsViewModel.swift in Sources */,
 				BCB3013C24354D88009E8163 /* UserDetailsVC.swift in Sources */,
 				BC4B09C02434C2F00086C30D /* UsersListVC.swift in Sources */,
 				BCF0EA362435024900188227 /* UsersListViewModel.swift in Sources */,
